@@ -1,0 +1,49 @@
+{
+  "consultas": [
+    {
+      "fecha": "2025-05-13 18:15:45",
+      "compuestos": [
+        "acetona",
+        "amon\u00edaco"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-05-13 18:23:26",
+      "compuestos": [
+        "acetona",
+        "amon\u00edaco"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-05-13 18:27:21",
+      "compuestos": [
+        "acetona",
+        "amon\u00edaco"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-05-23 23:01:24",
+      "compuestos": [
+        "sulfuro de hidr\u00f3geno",
+        "\u00e1cido sulf\u00farico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-05-25 18:30:03",
+      "compuestos": [
+        "acetona",
+        "amon\u00edaco"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    }
+  ]
+}
