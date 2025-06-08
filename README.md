@@ -1,5 +1,5 @@
 
-# Arquitectura del Conocimiento del Sistema Experto Químico
+# Arquitectura del Sistema Experto
 
 ## 1. Estructura General del Conocimiento
 
