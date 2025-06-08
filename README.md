@@ -1,35 +1,60 @@
+![Sistema_Experto_TDF](https://raw.githubusercontent.com/ckriztian/Energia_Electrica_TDF/refs/heads/main/reports/figures/banner_flat1.jpg
 
-# Arquitectura del Sistema Experto
+### Arquitectura del Sistema Experto
 
-## 1. Estructura General del Conocimiento
+### 1. Extracción y Organización del Conocimiento
 
-El sistema experto está orientado a diagnosticar la peligrosidad de mezclas químicas y recomendar acciones conforme a regulaciones ambientales específicas de Tierra del Fuego. El conocimiento se estructura en tres fuentes principales:
+El conocimiento de este sistema fue extraído del conocimiento técnico de una **experta en química, procesos químicos y regularizaciones locales**. A su vez, se sistematizó utilizando fuentes confiables como protocolos de manejo de sustancias peligrosas y las **normativas ambientales específicas de la provincia de Tierra del Fuego** (`regulaciones_tdf.json`).
 
-- **Base de hechos**: Los compuestos químicos con sus propiedades fisicoquímicas (`compuestos.json`).
-- **Base de conocimiento**: Las regulaciones locales específicas para cada categoría química (`regulaciones_tdf.json`).
-- **Motor de inferencia**: Lógica codificada en `logic.py`, que evalúa la toxicidad y genera recomendaciones mediante reglas.
+Este conocimiento se organiza en tres componentes fundamentales:
 
----
+### a. Base de Hechos (`compuestos.json`)
+Contiene información detallada de más de 40 compuestos químicos con sus propiedades fisicoquímicas:
 
-## 2. Representación del Conocimiento
+- pH
+- Inflamabilidad
+- Reactividad
+- Volatilidad
+- Presencia de metales pesados
+- Explosividad
+- Radiactividad
+- Categoría principal (ej. inflamable, tóxico, corrosivo, etc.)
 
-### 2.1. Reglas tipo IF-THEN (reglas de producción)
+### b. Base de Conocimiento (`regulaciones_tdf.json`)
+Incluye las **reglas y recomendaciones asociadas a cada categoría de riesgo químico**, indicando:
 
-El sistema utiliza reglas condicionales clásicas:
+- Métodos de descarte.
+- Requisitos de almacenamiento.
+- Autoridad competente.
+- Contactos de emergencia específicos.
 
+### c. Motor de Inferencia (`logic.py`)
+Aplica reglas lógicas para evaluar el nivel de toxicidad y generar recomendaciones, simulando el razonamiento de un experto humano.
+
+### 2. Reglas, Criterios y Estructuras de Decisión
+
+### a. Reglas tipo IF-THEN (Reglas de Producción)
 ```python
+if respuestas['inflamable'] == 'si':
+    toxicidad += 1
+
+if respuestas['explosivo'] == 'si':
+    toxicidad += 4
+
 if respuestas['pH'] == 'si':
     toxicidad += 2
-
-if respuestas.get('explosivo') == 'si':
-    toxicidad += 4
 ```
 
-### 2.2. Árbol implícito de decisión por puntajes
+Estas reglas también consideran valores "desconocido", penalizándolos con la mitad del puntaje:
 
-El sistema calcula un puntaje acumulado basado en las propiedades, que determina el nivel de toxicidad:
+```python
+if respuestas.get('radiactivo') == 'desconocido':
+    toxicidad += 2.5
+```
 
-| Puntaje total | Nivel de Toxicidad         | Confianza                    |
+### b. Árbol de Decisión Implícito por Puntajes
+
+| Puntaje total | Nivel de Toxicidad         | Grado de Certeza             |
 |---------------|----------------------------|------------------------------|
 | ≥ 5           | Extremadamente tóxica      | Nivel 4 (Alta certeza)       |
 | ≥ 4           | Altamente tóxica           | Nivel 3 (Probable)           |
@@ -37,81 +62,47 @@ El sistema calcula un puntaje acumulado basado en las propiedades, que determina
 | ≥ 1.5         | Potencialmente peligrosa   | Nivel 1 (Alta incertidumbre) |
 | < 1.5         | Baja toxicidad             | Nivel 0 (Riesgo mínimo)      |
 
----
-
-## 3. Organización del Conocimiento
-
-### 3.1. Jerarquía de Categorías de Riesgo
-
-Cada compuesto está clasificado en una categoría principal:
-
-- Inflamable
-- Corrosivo
-- Oxidante
-- Tóxico
-- Explosivo
-- Radiactivo
-
-Estas categorías se jerarquizan por nivel de riesgo para priorizar recomendaciones:
+### c. Reglas Jerárquicas por Categoría
 
 ```python
 prioridades = {
-  'radiactivo': 6,
-  'explosivo': 5,
-  'tóxico': 4,
-  'oxidante': 3,
-  'corrosivo': 2,
-  'inflamable': 1
+    'radiactivo': 6,
+    'explosivo': 5,
+    'tóxico': 4,
+    'oxidante': 3,
+    'corrosivo': 2,
+    'inflamable': 1
 }
 ```
 
-### 3.2. Asociación de Reglas y Conceptos
+### 3. Métodos de Inferencia Aplicados
 
-Cada categoría tiene asociadas tres reglas clave extraídas de `regulaciones_tdf.json`:
+- **Inferencia Directa**: Basada en respuestas explícitas del usuario.
+- **Inferencia Aproximada**: Penaliza respuestas "desconocidas".
+- **Inferencia Jerárquica**: Elige la categoría más peligrosa.
+- **Inferencia Integrada**: Deduce propiedades desde la combinación de compuestos.
 
-- **Descarte**: Proceso de disposición final.
-- **Requisitos**: Condiciones de almacenamiento y manipulación.
-- **Autoridad**: Ente regulador responsable.
+### 4. Lógica de Organización del Conocimiento
 
-**Ejemplo para `tóxico`:**
+| Nivel             | Descripción                                                                 |
+|------------------|------------------------------------------------------------------------------|
+| **Base química** | Información factual de compuestos (`compuestos.json`)                        |
+| **Base normativa**| Reglas por categoría química (`regulaciones_tdf.json`)                      |
+| **Motor lógico**  | Inferencia, evaluación y recomendaciones (`logic.py`)                        |
 
-```json
-{
-  "descarte": "Prohibido absolutamente el descarte...",
-  "requisitos": "Doble contenedor hermético...",
-  "autoridad": "Secretaría de Ambiente Nacional"
-}
-```
+### 5. Justificación de la Organización
 
+- **Facilidad de mantenimiento**
+- **Separación clara de dominios**
+- **Extensibilidad geográfica y normativa**
+- **Razonamiento explicable**
+
+___
+
+### Para más detalles del Sistema Experto:
 ---
-
-## 4. Métodos de Inferencia
-
-El sistema combina distintos tipos de inferencia:
-
-- **Inferencia directa**: Basada en respuestas explícitas del usuario.
-- **Inferencia aproximada**: Si la propiedad está marcada como “desconocida”, se suma la mitad del puntaje previsto.
-- **Inferencia jerárquica**: Se elige la categoría de mayor riesgo entre las presentes y se aplican sus reglas.
-
+### [Descripción del Proyecto del Sistema Experto](https://github.com/ckriztian/Energia_Electrica_TDF/blob/main/references/Abstract.pdf)
+### [Organización del Conocimiento en el Sistema Experto](https://github.com/ckriztian/Energia_Electrica_TDF/blob/main/references/Abstract.pdf)
 ---
+### [Link del video - presentación](https://wwww.youtube.com)
 
-## 5. Razonamiento del Sistema
-
-El flujo del sistema es el siguiente:
-
-1. **Entrada**: Usuario selecciona compuestos y responde propiedades.
-2. **Agrupación**: Se consolidan las propiedades comunes de la mezcla.
-3. **Evaluación**: Se calcula un puntaje total de toxicidad.
-4. **Clasificación**: Se determina el nivel de riesgo con base en los puntajes.
-5. **Recomendación**: Se consulta la regulación más estricta y se muestra al usuario.
-6. **Registro**: La consulta se guarda en `historial.json` para trazabilidad.
-
----
-
-## 6. Conclusión
-
-Esta arquitectura permite mantener una clara separación entre conocimiento, lógica y presentación, haciendo el sistema:
-
-- Extensible a nuevas categorías.
-- Adaptable a nuevas reglas o jurisdicciones.
-- Comprensible para usuarios y desarrolladores.
