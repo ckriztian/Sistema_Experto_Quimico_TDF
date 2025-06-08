@@ -17,6 +17,33 @@
       ],
       "nivel_toxicidad": "Extremadamente t\u00f3xica",
       "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-08 01:37:05",
+      "compuestos": [
+        "amon\u00edaco",
+        "formaldeh\u00eddo"
+      ],
+      "nivel_toxicidad": "Moderadamente t\u00f3xica",
+      "detalle": "Nivel 2 (Incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-08 01:40:07",
+      "compuestos": [
+        "amon\u00edaco",
+        "formaldeh\u00eddo"
+      ],
+      "nivel_toxicidad": "Moderadamente t\u00f3xica",
+      "detalle": "Nivel 2 (Incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-08 01:41:31",
+      "compuestos": [
+        "hidr\u00f3xido de sodio",
+        "\u00e1cido sulf\u00farico"
+      ],
+      "nivel_toxicidad": "Baja toxicidad",
+      "detalle": "Nivel 0 (Riesgo m\u00ednimo)"
     }
   ]
 }

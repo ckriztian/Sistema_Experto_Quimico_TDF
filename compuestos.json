@@ -258,7 +258,7 @@
             "metales_pesados": false,
             "explosivo": true,
             "radiactivo": false,
-            "categoria": "tóxico"
+            "categoria": "inflamable"
         },
         {
             "id": 21,
@@ -544,7 +544,7 @@
             "metales_pesados": false,
             "explosivo": true,
             "radiactivo": false,
-            "categoria": "explosivo"
+            "categoria": "corrosivo"
         },
         {
             "id": 43,
