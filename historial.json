@@ -1,0 +1,276 @@
+{
+  "consultas": [
+    {
+      "fecha": "2025-06-04 22:37:36",
+      "compuestos": [
+        "acetona",
+        "etanol"
+      ],
+      "nivel_toxicidad": "Moderadamente t\u00f3xica",
+      "detalle": "Nivel 2 (Incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-05 00:01:41",
+      "compuestos": [
+        "acetona",
+        "cloruro de benzalconio"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-05 00:11:33",
+      "compuestos": [
+        "acetona",
+        "cloruro de benzalconio"
+      ],
+      "nivel_toxicidad": "Moderadamente t\u00f3xica",
+      "detalle": "Nivel 2 (Incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-05 00:12:03",
+      "compuestos": [
+        "\u00e1cido p\u00edcrico",
+        "\u00e1cido sulfh\u00eddrico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-05 00:14:16",
+      "compuestos": [
+        "acetona",
+        "cloruro de mercurio"
+      ],
+      "nivel_toxicidad": "Altamente t\u00f3xica",
+      "detalle": "Nivel 3 (Probable)"
+    },
+    {
+      "fecha": "2025-06-05 00:16:29",
+      "compuestos": [
+        "acetona",
+        "cloroformo"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-05 00:16:34",
+      "compuestos": [
+        "acetona",
+        "cloroformo"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-05 00:16:36",
+      "compuestos": [
+        "acetona",
+        "cloroformo"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-05 00:25:24",
+      "compuestos": [
+        "fosfina",
+        "hexafluoruro de uranio",
+        "\u00e1cido p\u00edcrico",
+        "\u00e1cido sulfh\u00eddrico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-05 00:30:06",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-05 00:32:44",
+      "compuestos": [
+        "hidr\u00f3xido de potasio",
+        "\u00e1cido clorh\u00eddrico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-05 00:33:47",
+      "compuestos": [
+        "benceno",
+        "cloroformo"
+      ],
+      "nivel_toxicidad": "Moderadamente t\u00f3xica",
+      "detalle": "Nivel 2 (Incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-05 00:34:37",
+      "compuestos": [
+        "nitroglicerina",
+        "per\u00f3xido de benzoilo"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-05 00:35:21",
+      "compuestos": [
+        "tolueno",
+        "\u00e1cido sulfh\u00eddrico"
+      ],
+      "nivel_toxicidad": "Moderadamente t\u00f3xica",
+      "detalle": "Nivel 2 (Incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-07 20:22:56",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-07 20:23:33",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Altamente t\u00f3xica",
+      "detalle": "Nivel 3 (Probable)"
+    },
+    {
+      "fecha": "2025-06-07 20:23:40",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-07 20:23:43",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-07 20:23:45",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-07 20:23:53",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Altamente t\u00f3xica",
+      "detalle": "Nivel 3 (Probable)"
+    },
+    {
+      "fecha": "2025-06-07 20:23:54",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Altamente t\u00f3xica",
+      "detalle": "Nivel 3 (Probable)"
+    },
+    {
+      "fecha": "2025-06-07 20:24:00",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-07 20:24:08",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Altamente t\u00f3xica",
+      "detalle": "Nivel 3 (Probable)"
+    },
+    {
+      "fecha": "2025-06-07 20:24:27",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-07 20:29:45",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Altamente t\u00f3xica",
+      "detalle": "Nivel 3 (Probable)"
+    },
+    {
+      "fecha": "2025-06-07 20:29:56",
+      "compuestos": [
+        "amon\u00edaco",
+        "cloruro de benzalconio"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-07 20:30:30",
+      "compuestos": [
+        "\u00e1cido n\u00edtrico",
+        "\u00e1cido p\u00edcrico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-07 20:31:08",
+      "compuestos": [
+        "amon\u00edaco",
+        "asbesto"
+      ],
+      "nivel_toxicidad": "Moderadamente t\u00f3xica",
+      "detalle": "Nivel 2 (Incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-07 20:34:20",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Moderadamente t\u00f3xica",
+      "detalle": "Nivel 2 (Incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-07 20:34:29",
+      "compuestos": [
+        "sodio met\u00e1lico",
+        "sulfuro de hidr\u00f3geno"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    }
+  ]
+}

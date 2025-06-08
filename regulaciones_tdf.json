@@ -1,0 +1,46 @@
+{
+    "regulaciones": {
+        "corrosivo": {
+            "descarte": "Neutralizar previo a disposición final. Envío a relleno de seguridad autorizado",
+            "requisitos": "Envase plástico HDPE con doble bolsa interior",
+            "autoridad": "Secretaría de Ambiente de TDF"
+        },
+        "inflamable": {
+            "descarte": "Recuperación por empresas autorizadas. Prohibido descarte en red cloacal",
+            "requisitos": "Envase metálico con válvula de alivio",
+            "autoridad": "Dirección de Químicos de TDF"
+        },
+        "oxidante": {
+            "descarte": "Tratamiento especializado. Contactar con la empresa RECITDF",
+            "requisitos": "Envase original, no mezclar con otros residuos",
+            "autoridad": "Ministerio de Producción TDF"
+        },
+        "tóxico": {
+            "descarte": "Prohibido absolutamente el descarte. Acopio transitorio con inventario",
+            "requisitos": "Doble contenedor hermético con etiqueta de riesgo",
+            "autoridad": "Secretaría de Ambiente Nacional"
+        },
+        "explosivo": {
+            "descarte": "Manejo exclusivo por Fuerzas Armadas. Prohibido almacenamiento prolongado",
+            "requisitos": "Contenedores especiales anti-impacto en áreas designadas",
+            "autoridad": "Dirección de Materiales Peligrosos de TDF"
+        },
+        "radiactivo": {
+            "descarte": "Solo por Autoridad Regulatoria Nuclear. Aislar inmediatamente",
+            "requisitos": "Blindaje plomado con señalización específica",
+            "autoridad": "ARN (Autoridad Regulatoria Nuclear)"
+        },
+        "default": {
+            "descarte": "Consultar con autoridad local (Gobierno de TDF)",
+            "requisitos": "Envase resistente con etiqueta identificatoria",
+            "autoridad": "Municipalidad correspondiente"
+        }
+    },
+    "contactos_emergencia": {
+        "bomberos": "100",
+        "ambiente_tdf": "+54 2901 123456",
+        "toxicologico": "0800-222-5462",
+        "materiales_peligrosos": "103",
+        "nuclear": "0800-666-6293"
+    }
+}

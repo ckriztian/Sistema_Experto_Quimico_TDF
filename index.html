@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema Experto Químico</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+  <div class="max-w-4xl mx-auto py-10 px-4">
+    <h1 class="text-3xl font-bold mb-4">🧪 Sistema Experto Químico</h1>
+
+    <div class="mb-4">
+      <label class="flex items-center space-x-2">
+        <input type="checkbox" id="modoAvanzado" onchange="configurarModo()">
+        <span class="text-sm font-medium">Modo avanzado</span>
+      </label>
+    </div>
+
+    <div class="mb-6">
+      <h2 class="text-xl font-semibold mb-2">1. Seleccioná compuestos</h2>
+      <div id="compuestos" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 bg-white p-4 rounded shadow"></div>
+    </div>
+
+    <div class="mb-6">
+      <h2 class="text-xl font-semibold mb-2">2. Ingresá las propiedades</h2>
+      <div id="phInfo" class="mb-4"></div>
+      <div id="preguntas" class="space-y-3"></div>
+    </div>
+
+    <button id="evaluarBtn" class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Evaluar mezcla</button>
+    <button id="reiniciarBtn" class="bg-red-600 text-white px-4 py-2 rounded shadow hover:bg-red-700 ml-2">Reiniciar</button>
+
+    <div id="resultado" class="mt-8 bg-white p-4 rounded shadow hidden">
+      <h2 class="text-xl font-semibold mb-2">🔬 Resultado</h2>
+      <p><strong>Nivel de Toxicidad:</strong> <span id="nivel" class="text-red-600 font-bold"></span></p>
+      <p><strong>Detalle:</strong> <span id="detalle"></span></p>
+      <h3 class="mt-4 font-semibold">📋 Recomendaciones</h3>
+      <pre id="recomendaciones" class="whitespace-pre-wrap bg-gray-100 p-2 rounded text-sm"></pre>
+    </div>
+  </div>
+
+  <script>
+    const preguntas = [
+      ['pH', '¿El pH está fuera de rango seguro (2-12)?'],
+      ['inflamable', '¿Es inflamable?'],
+      ['reactivo', '¿Es reactivo?'],
+      ['metales_pesados', '¿Contiene metales pesados?'],
+      ['volatil', '¿Es volátil?'],
+      ['explosivo', '¿Es explosiva o pirofórica?'],
+      ['radiactivo', '¿Presenta riesgo radiactivo?'],
+      ['biologico', '¿Contiene agentes biológicos peligrosos?']
+    ];
+
+    const respuestas = {};
+    const seleccionados = new Set();
+    let compuestosCache = [];
+    let esAvanzado = false;
+
+    function configurarModo() {
+      esAvanzado = document.getElementById('modoAvanzado').checked;
+      cargarPreguntas(); // recargar
+    }
+
+    async function cargarCompuestos() {
+      const res = await fetch('http://localhost:8000/compuestos');
+      const data = await res.json();
+      compuestosCache = data;
+      const cont = document.getElementById('compuestos');
+
+      data.forEach(c => {
+        const btn = document.createElement('button');
+        btn.textContent = c.nombre;
+        btn.className = 'bg-gray-200 hover:bg-green-300 text-sm px-2 py-1 rounded';
+        btn.onclick = () => {
+          btn.classList.toggle('bg-green-500');
+          btn.classList.toggle('text-white');
+          seleccionados.has(c.id) ? seleccionados.delete(c.id) : seleccionados.add(c.id);
+          calcularPH();
+          if (!esAvanzado) inferirPropiedades();
+        };
+        cont.appendChild(btn);
+      });
+    }
+
+    async function calcularPH() {
+      if (seleccionados.size < 2) {
+        document.getElementById('phInfo').innerHTML = '';
+        return;
+      }
+
+      const compuestosSeleccionados = compuestosCache.filter(c => seleccionados.has(c.id) && c.pH !== null);
+      if (compuestosSeleccionados.length === 0) {
+        document.getElementById('phInfo').innerHTML = '<p class="text-sm text-gray-600">pH desconocido para los compuestos seleccionados.</p>';
+        return;
+      }
+
+      const promedio = compuestosSeleccionados.reduce((acc, c) => acc + c.pH, 0) / compuestosSeleccionados.length;
+      const seguro = promedio >= 2 && promedio <= 12;
+      document.getElementById('phInfo').innerHTML = `
+        <p class="text-sm ${seguro ? 'text-green-700' : 'text-red-700'} font-semibold">
+          pH promedio estimado: ${promedio.toFixed(2)} (${seguro ? 'dentro del rango seguro' : 'fuera del rango seguro'})
+        </p>
+      `;
+    }
+
+    function cargarPreguntas() {
+      const cont = document.getElementById('preguntas');
+      cont.innerHTML = ''; // limpiar
+
+      preguntas.forEach(([key, texto]) => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <label class="block font-medium mb-1">${texto}</label>
+          <select name="${key}" class="w-full border rounded p-1" onchange="respuestas['${key}'] = this.value" ${!esAvanzado && key !== 'pH' ? 'disabled' : ''}>
+            <option value="desconocido">Desconocido</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+          </select>
+        `;
+        cont.appendChild(div);
+        respuestas[key] = 'desconocido';
+      });
+    }
+
+    async function inferirPropiedades() {
+      const compuestosSeleccionados = compuestosCache.filter(c => seleccionados.has(c.id));
+
+      const props = {
+        inflamable: compuestosSeleccionados.some(c => c.inflamable),
+        reactivo: compuestosSeleccionados.some(c => c.reactivo),
+        metales_pesados: compuestosSeleccionados.some(c => c.metales_pesados),
+        volatil: compuestosSeleccionados.some(c => c.volatil),
+        explosivo: compuestosSeleccionados.some(c => c.explosivo),
+        radiactivo: compuestosSeleccionados.some(c => c.radiactivo)
+      };
+
+      for (const key in props) {
+        const select = document.querySelector(`select[name="${key}"]`);
+        if (select) {
+          select.value = props[key] ? "si" : "no";
+          respuestas[key] = props[key] ? "si" : "no";
+        }
+      }
+    }
+
+    async function evaluar() {
+      if (seleccionados.size < 2) {
+        alert('Seleccioná al menos 2 compuestos');
+        return;
+      }
+
+      const body = {
+        ids: [...seleccionados],
+        respuestas
+      };
+
+      const res = await fetch('http://localhost:8000/evaluar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+
+      const data = await res.json();
+      document.getElementById('nivel').textContent = data.nivel_toxicidad;
+      document.getElementById('detalle').textContent = data.detalle;
+      document.getElementById('recomendaciones').textContent = data.recomendaciones;
+      document.getElementById('resultado').classList.remove('hidden');
+
+      document.getElementById('resultado').insertAdjacentHTML('beforeend', `
+        <div class="mt-6 p-4 border-t pt-4">
+          <h4 class="font-semibold text-lg mb-1">📘 Lo que aprendiste hoy</h4>
+          <ul class="text-sm list-disc list-inside text-gray-700">
+            ${resaltarLecciones(body.ids)}
+          </ul>
+        </div>
+      `);
+    }
+
+    function resaltarLecciones(ids) {
+      const temas = {
+        inflamable: "Los compuestos inflamables deben almacenarse lejos del calor, en envases metálicos.",
+        toxico: "Los compuestos tóxicos deben manipularse con guantes y mascarilla. No descartarlos al desagüe.",
+        radiactivo: "Los materiales radiactivos solo deben manipularse con autorización especial.",
+        explosivo: "Los explosivos requieren contención especial y control de temperatura.",
+        corrosivo: "Los corrosivos pueden quemar piel y materiales. Usar protección y envases resistentes."
+      };
+
+      const lecciones = new Set();
+      ids.forEach(id => {
+        const comp = compuestosCache.find(c => c.id === id);
+        if (comp) lecciones.add(temas[comp.categoria]);
+      });
+
+      return [...lecciones].filter(Boolean).map(t => `<li>${t}</li>`).join('');
+    }
+
+    document.getElementById("reiniciarBtn").addEventListener("click", function (event) {
+      event.preventDefault();
+      location.reload(); // recarga la página
+    });
+
+    document.getElementById("evaluarBtn").addEventListener("click", function (event) {
+      event.preventDefault();
+      evaluar(); // evalua la mezcla
+    });
+
+    cargarCompuestos();
+    cargarPreguntas();
+  </script>
+</body>
+</html>
+
+
