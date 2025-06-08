@@ -98,7 +98,8 @@ prioridades = {
 - **Separación clara de dominios**
 - **Extensibilidad geográfica y normativa**
 - **Razonamiento explicable**
-
+___
+### [Instrucciones para Ejecutar la API](https://github.com/ckriztian/Sistema_Experto_Quimico_TDF/blob/main/docs/readme.md)
 ___
 
 ### Para más detalles del Sistema Experto:

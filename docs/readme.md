@@ -46,4 +46,4 @@
 - `regulaciones_tdf.json`: Reglas y regulaciones locales.
 - `index.html`: Interfaz web (abrir en navegador).
 
-> 🧪 `historial.json` se genera automáticamente si no existe.
+> `historial.json` se genera automáticamente si no existe.
