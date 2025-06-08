@@ -4,10 +4,32 @@
   <meta charset="UTF-8">
   <title>Sistema Experto Químico</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  #historialModal {
+    transition: opacity 0.3s ease;
+  }
+  #historialContenido {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  #historialContenido::-webkit-scrollbar {
+    width: 8px;
+  }
+  #historialContenido::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  #historialContenido::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  #historialContenido::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+</style>
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans">
   <div class="max-w-4xl mx-auto py-10 px-4">
-    <h1 class="text-3xl font-bold mb-4">🧪 Sistema Experto Químico</h1>
+    <h1 class="text-3xl font-bold mb-4">🧪 Sistema Experto Químico - Cristian Vera</h1>
 
     <div class="mb-4">
       <label class="flex items-center space-x-2">
@@ -29,6 +51,7 @@
 
     <button id="evaluarBtn" class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Evaluar mezcla</button>
     <button id="reiniciarBtn" class="bg-red-600 text-white px-4 py-2 rounded shadow hover:bg-red-700 ml-2">Reiniciar</button>
+    <button id="verHistorialBtn" class="bg-purple-600 text-white px-4 py-2 rounded shadow hover:bg-purple-700 ml-2">Ver Historial</button>
 
     <div id="resultado" class="mt-8 bg-white p-4 rounded shadow hidden">
       <h2 class="text-xl font-semibold mb-2">🔬 Resultado</h2>
@@ -37,6 +60,16 @@
       <h3 class="mt-4 font-semibold">📋 Recomendaciones</h3>
       <pre id="recomendaciones" class="whitespace-pre-wrap bg-gray-100 p-2 rounded text-sm"></pre>
     </div>
+    <div id="historialModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white p-6 rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+    <h2 class="text-xl font-bold mb-4">📜 Historial de Consultas</h2>
+    <div id="historialContenido"></div>
+    <button onclick="document.getElementById('historialModal').classList.add('hidden')" 
+            class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+      Cerrar
+    </button>
+  </div>
+</div>
   </div>
 
   <script>
@@ -194,6 +227,47 @@
       return [...lecciones].filter(Boolean).map(t => `<li>${t}</li>`).join('');
     }
 
+    async function cargarHistorial() {
+  try {
+    const res = await fetch('http://localhost:8000/historial');
+    const data = await res.json();
+    
+    const contenedor = document.getElementById('historialContenido');
+    contenedor.innerHTML = '';
+    
+    if (data.length === 0) {
+      contenedor.innerHTML = '<p class="text-gray-600">No hay consultas registradas.</p>';
+      return;
+    }
+    
+    data.forEach(consulta => {
+      const div = document.createElement('div');
+      div.className = 'mb-6 pb-4 border-b';
+      div.innerHTML = `
+        <p class="text-sm text-gray-500 mb-1">${consulta.fecha}</p>
+        <h3 class="font-semibold">Compuestos: ${consulta.compuestos.join(', ')}</h3>
+        <p class="mt-1"><span class="font-medium">Nivel:</span> <span class="${consulta.nivel_toxicidad.includes('Extremadamente') ? 'text-red-600' : 
+          consulta.nivel_toxicidad.includes('Altamente') ? 'text-orange-600' : 
+          consulta.nivel_toxicidad.includes('Moderadamente') ? 'text-yellow-600' : 
+          consulta.nivel_toxicidad.includes('Potencialmente') ? 'text-blue-600' : 'text-green-600'}">${consulta.nivel_toxicidad}</span></p>
+        <p class="text-sm mt-1">${consulta.detalle}</p>
+      `;
+      contenedor.appendChild(div);
+    });
+    
+    document.getElementById('historialModal').classList.remove('hidden');
+  } catch (error) {
+    console.error('Error al cargar el historial:', error);
+    alert('Error al cargar el historial');
+  }
+}
+
+    // Agrega este event listener al final de tu script
+    document.getElementById("verHistorialBtn").addEventListener("click", function(event) {
+      event.preventDefault();
+      cargarHistorial();
+    });
+
     document.getElementById("reiniciarBtn").addEventListener("click", function (event) {
       event.preventDefault();
       location.reload(); // recarga la página
@@ -203,6 +277,8 @@
       event.preventDefault();
       evaluar(); // evalua la mezcla
     });
+    
+    
 
     cargarCompuestos();
     cargarPreguntas();
