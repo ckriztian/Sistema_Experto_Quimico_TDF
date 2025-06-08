@@ -105,4 +105,19 @@ ___
 ### [Organización del Conocimiento en el Sistema Experto](https://github.com/ckriztian/Energia_Electrica_TDF/blob/main/references/Abstract.pdf)
 ---
 ### [Link del video - presentación](https://wwww.youtube.com)
+---
+ ### Estructura del Repositorio:
+
+```
+├── docs/                          # Documentación del proyecto
+│   └── Entrega 1   # Informe descriptivo del proyecto
+│   └── Entrega 2   # Informe de la arquitectura del proyecto
+├── README.md                     # Descripción general del sistema
+├── api.py                        # API REST desarrollada con FastAPI
+├── compuestos.json               # Base de hechos: compuestos químicos y propiedades
+├── historial.json                # Historial de consultas (se crea automáticamente si no existe)
+├── index.html                    # Interfaz web del sistema experto
+├── logic.py                      # Motor de inferencia y lógica del sistema
+├── regulaciones_tdf.json         # Reglas de seguridad y regulaciones ambientales locales
+```
 
