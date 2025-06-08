@@ -109,9 +109,9 @@ ___
  ### Estructura del Repositorio:
 
 ```
-├── docs/                          # Documentación del proyecto
-│   └── Entrega 1   # Informe descriptivo del proyecto
-│   └── Entrega 2   # Informe de la arquitectura del proyecto
+├── docs/                         # Documentación del proyecto
+│   └── Entrega 1                 # Informe descriptivo del proyecto
+│   └── Entrega 2                 # Informe de la arquitectura del proyecto
 ├── README.md                     # Descripción general del sistema
 ├── api.py                        # API REST desarrollada con FastAPI
 ├── compuestos.json               # Base de hechos: compuestos químicos y propiedades
