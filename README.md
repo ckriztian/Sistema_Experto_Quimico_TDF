@@ -1,4 +1,4 @@
-![Sistema_Experto_TDF](https://raw.githubusercontent.com/ckriztian/Energia_Electrica_TDF/refs/heads/main/reports/figures/banner_flat1.jpg
+![Sistema_Experto_TDF](https://raw.githubusercontent.com/ckriztian/Energia_Electrica_TDF/refs/heads/main/reports/figures/banner_flat1.jpg)
 
 ### Arquitectura del Sistema Experto
 
