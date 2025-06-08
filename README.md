@@ -121,5 +121,6 @@ ___
 ├── index.html                    # Interfaz web del sistema experto
 ├── logic.py                      # Motor de inferencia y lógica del sistema
 ├── regulaciones_tdf.json         # Reglas de seguridad y regulaciones ambientales locales
+├── requirements.txt              # Requerimientos para ejecutar la API
 ```
 
