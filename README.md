@@ -1,6 +1,8 @@
 ![Sistema_Experto_TDF](https://raw.githubusercontent.com/ckriztian/Energia_Electrica_TDF/refs/heads/main/reports/figures/banner_flat1.jpg)
 
-### Arquitectura del Sistema Experto
+### 🧪 Sistema Experto para la Evaluación de Sustancias Químicas y Gestión de Riesgos en la Provincia de Tierra del Fuego, Argentina. 
+---
+### Arquitectura del Sistema Experto 
 
 ### 1. Extracción y Organización del Conocimiento
 
@@ -106,7 +108,7 @@ ___
 ---
 ### [Link del video - presentación](https://wwww.youtube.com)
 ---
- ### Estructura del Repositorio:
+ ### 📁 Estructura del Repositorio:
 
 ```
 ├── docs/                         # Documentación del proyecto
