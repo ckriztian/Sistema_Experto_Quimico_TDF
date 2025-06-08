@@ -101,8 +101,8 @@ ___
 
 ### Para más detalles del Sistema Experto:
 ---
-### [Descripción del Proyecto del Sistema Experto](https://github.com/ckriztian/Energia_Electrica_TDF/blob/main/references/Abstract.pdf)
-### [Organización del Conocimiento en el Sistema Experto](https://github.com/ckriztian/Energia_Electrica_TDF/blob/main/references/Abstract.pdf)
+### [Descripción del Proyecto del Sistema Experto](https://github.com/ckriztian/Sistema_Experto_Quimico_TDF/blob/main/docs/Entrega%201.pdf)
+### [Organización del Conocimiento en el Sistema Experto](https://github.com/ckriztian/Sistema_Experto_Quimico_TDF/blob/main/docs/Entrega%202.pdf)
 ---
 ### [Link del video - presentación](https://wwww.youtube.com)
 ---
