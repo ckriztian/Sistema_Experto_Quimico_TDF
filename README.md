@@ -7,6 +7,7 @@ Materia: **Desarrollo de Sistemas de Inteligencia Artificial**
 Docente y asesor del proyecto: **Lic. Martín Mirabete**
 
 Alumno y desarrollador: **Cristian E. Vera Quijano**
+
 ---
 ### Arquitectura del Sistema Experto 
 
