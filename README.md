@@ -2,6 +2,10 @@
 
 ### 🧪 Sistema Experto para la Evaluación de Sustancias Químicas y Gestión de Riesgos en la Provincia de Tierra del Fuego, Argentina. 
 ---
+Materia: **Desarrollo de Sistemas de Inteligencia Artificial**
+Docente y asesor del proyecto: **Lic. Martín Mirabete**
+Alumno y desarrollador: **Cristian E. Vera Quijano**
+---
 ### Arquitectura del Sistema Experto 
 
 ### 1. Extracción y Organización del Conocimiento
