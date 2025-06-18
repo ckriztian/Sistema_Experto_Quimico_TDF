@@ -23,7 +23,7 @@ class EvaluacionRequest(BaseModel):
 
 @app.get("/")
 def read_root():
-    return {"mensaje": "API del Sistema Experto Químico activa"}
+    return {"mensaje": "API del Sistema Experto Químico ONLINE"}
 
 @app.get("/compuestos")
 def get_compuestos():
