@@ -106,20 +106,21 @@ prioridades = {
 - **Extensibilidad geográfica y normativa**
 - **Razonamiento explicable**
 ___
-### [Instrucciones para Ejecutar la API](https://github.com/ckriztian/Sistema_Experto_Quimico_TDF/blob/main/docs/readme.md)
+### [Instrucciones para Ejecutar la API](/docs/readme.md)
 ___
 
 ### Para más detalles del Sistema Experto:
----
+
 ### [Descripción del Proyecto del Sistema Experto](https://github.com/ckriztian/Sistema_Experto_Quimico_TDF/blob/main/docs/Entrega%201.pdf)
 ### [Organización del Conocimiento en el Sistema Experto](https://github.com/ckriztian/Sistema_Experto_Quimico_TDF/blob/main/docs/Entrega%202.pdf)
 ---
-### [Link del video - presentación](https://wwww.youtube.com)
+### [Link del video - presentación](/video/readme.md)
 ---
  ### 📁 Estructura del Repositorio:
 
 ```
 ├── docs/                         # Documentación del proyecto
+├── video/                        # Video presentación
 ├── README.md                     # Descripción general del sistema
 ├── api.py                        # API REST desarrollada con FastAPI
 ├── compuestos.json               # Base de hechos: compuestos químicos y propiedades

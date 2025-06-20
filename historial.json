@@ -1,0 +1,175 @@
+{
+  "consultas": [
+    {
+      "fecha": "2025-06-18 18:28:01",
+      "compuestos": [
+        "acetona",
+        "cloroformo"
+      ],
+      "nivel_toxicidad": "Potencialmente peligrosa",
+      "detalle": "Nivel 1 (Alta incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-18 18:29:08",
+      "compuestos": [
+        "acetona",
+        "cloroformo"
+      ],
+      "nivel_toxicidad": "Potencialmente peligrosa",
+      "detalle": "Nivel 1 (Alta incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-18 20:31:18",
+      "compuestos": [
+        "benceno",
+        "metanol"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 20:32:24",
+      "compuestos": [
+        "cloruro de vinilo",
+        "cloroformo"
+      ],
+      "nivel_toxicidad": "Potencialmente peligrosa",
+      "detalle": "Nivel 1 (Alta incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-18 20:45:51",
+      "compuestos": [
+        "hidracina",
+        "xileno"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 20:47:15",
+      "compuestos": [
+        "acetona",
+        "agua oxigenada"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 21:01:39",
+      "compuestos": [
+        "cloroformo",
+        "hexafluoruro de uranio"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 21:03:24",
+      "compuestos": [
+        "amon\u00edaco",
+        "etanol"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 21:20:35",
+      "compuestos": [
+        "fosfina",
+        "xileno"
+      ],
+      "nivel_toxicidad": "Potencialmente peligrosa",
+      "detalle": "Nivel 1 (Alta incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-18 21:22:05",
+      "compuestos": [
+        "benceno",
+        "cloroformo"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 21:55:04",
+      "compuestos": [
+        "etanol",
+        "fosfina"
+      ],
+      "nivel_toxicidad": "Potencialmente peligrosa",
+      "detalle": "Nivel 1 (Alta incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-18 21:56:03",
+      "compuestos": [
+        "\u00e9ter et\u00edlico",
+        "etanol"
+      ],
+      "nivel_toxicidad": "Potencialmente peligrosa",
+      "detalle": "Nivel 1 (Alta incertidumbre)"
+    },
+    {
+      "fecha": "2025-06-18 22:11:30",
+      "compuestos": [
+        "cloruro de mercurio",
+        "\u00e9ter et\u00edlico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 22:11:42",
+      "compuestos": [
+        "\u00e1cido p\u00edcrico",
+        "\u00e1cido sulf\u00farico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 22:11:46",
+      "compuestos": [
+        "\u00e1cido p\u00edcrico",
+        "\u00e1cido sulf\u00farico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 22:11:53",
+      "compuestos": [
+        "\u00e1cido p\u00edcrico",
+        "\u00e1cido sulf\u00farico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 22:12:35",
+      "compuestos": [
+        "polonio-210",
+        "tolueno"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 22:13:07",
+      "compuestos": [
+        "polonio-210",
+        "\u00e1cido sulf\u00farico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    },
+    {
+      "fecha": "2025-06-18 22:13:09",
+      "compuestos": [
+        "polonio-210",
+        "\u00e1cido sulf\u00farico"
+      ],
+      "nivel_toxicidad": "Extremadamente t\u00f3xica",
+      "detalle": "Nivel 4 (Alta certeza)"
+    }
+  ]
+}
